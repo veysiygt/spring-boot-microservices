@@ -53,5 +53,5 @@ jobs:
           context: ${{ matrix.image_name }}
           file: ${{ matrix.image_name }}/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ env.REGISTRY }}/${{ env.REPO_OWNER }}/${{ matrix.image_name }}:latest
           labels: ${{ steps.meta.outputs.labels }}
